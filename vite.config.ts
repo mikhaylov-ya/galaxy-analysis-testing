@@ -13,6 +13,11 @@ export default defineConfig(({ mode }) => {
         define: {
             'process.env.API_HOST': JSON.stringify(env.API_HOST),
         },
+        test: {
+            globals: true,
+            environment: 'jsdom',
+            setupFiles: 'vitest.setup.ts', // optional, if you need global setup
+        },
         resolve: {
             alias: {
                 '@pages': path.resolve(__dirname, './src/pages'),
