@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Интеграционный тест навигации', () => {
+test.describe('Интеграционный тест страницы анализа', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:5173');
   });

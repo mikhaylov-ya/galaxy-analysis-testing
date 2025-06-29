@@ -1,8 +1,10 @@
+import { type Highlights } from "@/types/common";
+
 export const STORAGE_KEY = 'tableHistory';
 
 export const API_HOST = import.meta.env.VITE_API_HOST || 'http://localhost:3000';
 
-export const HIGHLIGHT_TITLES: Record<string, string> = {
+export const HIGHLIGHT_TITLES: Record<keyof Highlights, string> = {
     total_spend_galactic: 'Общие расходы',
     rows_affected: 'Обработано строк',
     less_spent_at: 'День min расходов',
