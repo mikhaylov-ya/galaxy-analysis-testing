@@ -27,7 +27,7 @@ export const HistoryModal: FC = () => {
     return (
         <Modal isOpen={isOpenModal} onClose={hideModal}>
             <div className={styles.root}>
-                <div className={styles.highlights}>
+                <div className={styles.highlights} data-testid="modal-highlights">
                     {hightlights.map((highlight) => (
                         <HighlightCard key={highlight.title} highlight={highlight} className={styles.hightlightCard} />
                     ))}

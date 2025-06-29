@@ -38,10 +38,11 @@ export const HistoryItem: FC<Props> = ({ item, onClick, onDelete }) => {
     };
 
     return (
-        <div className={styles.root}>
+        <div className={styles.root} data-testid={`history-item-${id}`}>
             <Button
                 type="button"
                 variant="secondary"
+                data-testid={`modal-button-${id}`}
                 className={cn(styles.item, { [styles.disabled]: !hasHighlights })}
                 aria-label={`Открыть хайлайты для ${fileName}`}
                 onClick={handleItemClick}
