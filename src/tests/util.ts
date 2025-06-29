@@ -1,17 +1,14 @@
-import { type Page } from "playwright";
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-export const uploadByClick = async (page: Page, file: File) => {
-  const fileChooserPromise = page.waitForEvent('filechooser');
-  
-  await page.getByTestId('upload-button').click();
-  
-  const fileChooser = await fileChooserPromise;
-  const arrayBuffer = await file.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
+import { type Page } from 'playwright';
 
-  await fileChooser.setFiles([{
-    name: file.name,
-    mimeType: file.type,
-    buffer,
-  }]);
-}
+export const uploadByClick = async (page: Page, options: { valid: boolean } = { valid: true }) => {
+    const fileChooserPromise = page.waitForEvent('filechooser');
+
+    await page.getByTestId('upload-button').click();
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const fileChooser = await fileChooserPromise;
+    await fileChooser.setFiles(path.join(__dirname, `./files/${options.valid ? 'report' : 'invalid'}.csv`));
+};
