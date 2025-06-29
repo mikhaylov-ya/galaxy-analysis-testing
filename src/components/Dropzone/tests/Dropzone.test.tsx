@@ -69,7 +69,7 @@ it('вызывает onFileSelect для валидных файлов', async (
   render(<Dropzone {...defaultProps} onFileSelect={onFileSelect} />);
 
   const fileInput = screen.getByTestId('file-input') as HTMLInputElement;
-  const file = genMockCsvFile();
+  const file = genMockCsvFile({ rowCount: 10 });
 
   // Trigger the file input
   fireEvent.change(fileInput, { target: { files: [file] } });
