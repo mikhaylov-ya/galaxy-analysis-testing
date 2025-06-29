@@ -13,7 +13,7 @@ type Props = {
 };
 export const FileStatus: FC<Props> = ({ type, isActive }) => {
     return (
-        <span className={cn(styles.root, { [styles.active]: isActive })}>
+        <span className={cn(styles.root, { [styles.active]: isActive })} data-testid="file-status">
             {type === 'success' ? (
                 <>
                     <Typography>Обработан успешно</Typography>
