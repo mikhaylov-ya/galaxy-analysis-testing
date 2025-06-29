@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
 
 import { FileStatus } from '../FileStatus';
 import styles from '../FileStatus.module.css';
+
+import { render, screen } from '@/tests/test-utils';
 
 describe('FileStatus Component', () => {
     it('renders success message when type is "success"', () => {

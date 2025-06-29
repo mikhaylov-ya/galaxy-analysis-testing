@@ -1,8 +1,7 @@
 import { ClearHistoryButton } from '@components/ClearHistoryButton';
-import { waitFor } from '@testing-library/react';
 import { vi } from 'vitest';
 
-import { render, screen, fireEvent } from '@/tests/test-utils';
+import { render, screen, fireEvent, waitFor } from '@/tests/test-utils';
 
 const mockUseHistoryStore = vi.fn()
 const mockClearHistoryStorage = vi.fn()
