@@ -35,5 +35,12 @@ export default defineConfig(({ mode }) => {
             },
         },
         plugins: [react()],
+        css: {
+            modules: {
+                generateScopedName: process.env.PLAYWRIGHT_TEST 
+                    ? '[local]' 
+                    : '[name]__[local]___[hash:base64:5]'
+            }
+        }
     };
 });
