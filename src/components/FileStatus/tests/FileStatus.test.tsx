@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
 import { FileStatus } from '../FileStatus';
-
 import styles from '../FileStatus.module.css';
 
 describe('FileStatus Component', () => {
