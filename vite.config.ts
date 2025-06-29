@@ -16,10 +16,11 @@ export default defineConfig(({ mode }) => {
         test: {
             globals: true,
             environment: 'jsdom',
-            setupFiles: 'vitest.setup.ts', // optional, if you need global setup
+            setupFiles: 'vitest.setup.ts',
         },
         resolve: {
             alias: {
+                '@': path.resolve(__dirname, 'src'),
                 '@pages': path.resolve(__dirname, './src/pages'),
                 '@components': path.resolve(__dirname, './src/components'),
                 '@layouts': path.resolve(__dirname, './src/layouts'),
