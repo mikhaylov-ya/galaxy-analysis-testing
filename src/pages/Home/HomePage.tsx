@@ -44,7 +44,7 @@ export const HomePage = () => {
         if (!file || status === 'processing') {
             return;
         }
-        
+
         setStatus('processing');
         await analyzeCsv(file);
     };

@@ -1,4 +1,3 @@
-
 import { FileStatus } from '../FileStatus';
 import styles from '../FileStatus.module.css';
 
@@ -16,7 +15,7 @@ describe('FileStatus Component', () => {
     });
 
     it('applies active class when isActive is true', () => {
-        render(<FileStatus type="success" isActive={true} />);        
+        render(<FileStatus type="success" isActive={true} />);
         expect(screen.getByTestId('file-status')).toHaveClass(styles.active);
     });
 
