@@ -131,7 +131,7 @@ export const Dropzone: FC<Props> = ({ file, status, error, onFileSelect, onClear
         }
 
         return (
-            <Button type="button" variant="upload" onClick={handleUploadClick} disabled={isProcessing}>
+            <Button type="button" variant="upload" data-testid="upload-button" onClick={handleUploadClick} disabled={isProcessing}>
                 Загрузить файл
             </Button>
         );
@@ -173,7 +173,7 @@ export const Dropzone: FC<Props> = ({ file, status, error, onFileSelect, onClear
             role="button"
             tabIndex={0}
         >
-            <input type="file" accept=".csv" ref={inputRef} onChange={handleInputChange} hidden />
+            <input type="file" accept=".csv" data-testid="file-input" ref={inputRef} onChange={handleInputChange} hidden />
 
             {renderContent()}
 
