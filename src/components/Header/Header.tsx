@@ -5,8 +5,8 @@ import { Title } from './Title';
 export const Header = () => {
     return (
         <header className={styles.header}>
-            <Title />
-            <Navigation />
+            <Title data-testid="title" />
+            <Navigation data-testid="navigation" />
         </header>
     );
 };
